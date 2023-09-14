@@ -1,0 +1,34 @@
+version: '3.9'
+
+services:
+  redis:
+    container_name: redis
+    image: redis:latest
+    restart: unless-stopped
+    ports:
+      - 6379:6379
+  mysqldb:
+    container_name: notes_app_mysql
+    image: mysql:latest
+    restart: unless-stopped
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=user_notes_dev
+    ports:
+      - 3306:3306
+    volumes:
+      - db:/var/lib/mysql
+  app:
+    container_name: notes_app_apis
+    depends_on:
+      - mysqldb
+      - redis
+    build: ./
+    restart: unless-stopped
+    ports:
+      - 3000:3000
+    stdin_open: true
+    tty: true
+
+volumes: 
+  db:

@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.3.1",
+    "eslint": "^8.49.0",
+    "express": "^4.18.2",
+    "joi": "^17.10.1",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.6.1",
+    "nodemon": "^3.0.1",
+    "redis": "^4.6.8",
+    "sequelize": "^6.28.0",
+    "winston": "^3.10.0"
+  },
+  "name": "notes-taking-apis",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "build":""
+  },
+  "keywords": [],
+  "author": "Sherjil Malik",
+  "license": "ISC",
+  "description": ""
+}
